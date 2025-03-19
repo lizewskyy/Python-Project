@@ -12,37 +12,40 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
+            display: block;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background-color: #f4f4f9;
         }
-        .navbar{   
-            
+        .navbar {
             width: 100%;
-            height: 60px;
+            min-height: 15%;
+            max-height: 400px;
             position: absolute;
-            top: 5%;
+            top: 0;
             left: 0;
             right: 0;
-            transform: translate(0%, -50%);
             margin: auto;
             background-color: #000000 !important;
         }
-        .navbar a{
+
+        .navbar a {
             margin-right: 20px;
         }
+        
         .signup-container {
             color: white;
             background: hsl(0, 0%, 9%);
-            margin-left: 30%;
+            margin-top: 5%;
+            margin-left: 25%;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
+            width: 90%;
+            max-width: 500px;
         }
+
         .signup-container h2 {
             color: white;
             margin-bottom: 20px;
@@ -94,31 +97,72 @@
         .login-link a:hover {
             text-decoration: underline;
         }
-    </style>
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .signup-container {
+                width: 90%;
+                margin: 15% 0% 0% 5%;
+            }
+            .signup-container h2 {
+                font-size: 20px;
+            }
+            .form-group input {
+                font-size: 14px;
+            }
+            .signup-btn {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .signup-container {
+                padding: 15px;
+            }
+            .signup-container h2 {
+                font-size: 18px;
+            }
+            .form-group input {
+                font-size: 12px;
+                padding: 8px;
+            }
+            .signup-btn {
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
     </style>
 </head>
 <body>
+    <br>
+    <br>
     <div class="signup-container">
         <h2>Sign Up</h2>
-        <form action="/submit-signup" method="POST">
+        <form method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" placeholder="Create a Username" required>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="Enter your Email" required>
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <label for="password1">Password</label>
+                <input type="password" id="password1" name="password1" placeholder="Create a Password" required>
             </div>
-            <button type="submit" class="signup-btn">Sign Up</button>
+            <div class="form-group">
+                <label for="password2">Confirm Password</label>
+                <input type="password" id="password2" name="password2" placeholder="Confirm Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
         <div class="login-link">
             Already have an account? <a href="/login">Log in</a>
         </div>
     </div>
+    <br>
+    <br>
 </body>
 </html>
 {%endblock%}
