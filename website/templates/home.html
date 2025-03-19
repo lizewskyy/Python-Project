@@ -15,6 +15,11 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
         <style>
+            body{
+                background-color: #000000;
+                background-image: url("{{ url_for('static', filename='R.jpeg') }}");
+                background-size: 100dvh;
+            }
             .navbar{   
             
             width: 100%;
@@ -59,16 +64,15 @@
         }
     
         .row{
+            background-color: white;
+            
+            height: 350px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
         }
-        .features{
-            margin: auto;
-            top: 50px;
-            padding: 20px;  
-        }
+        
 
         </style>
 
@@ -103,7 +107,7 @@
             </div>
         </div>
             <footer class="text-center py-4">
-                <p>&copy; 2025 Lizewsky Studio. All rights reserved.</p>
+                <p style="color: white;">&copy; 2025 Lizewsky Studio. All rights reserved.</p>
             </footer>
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
