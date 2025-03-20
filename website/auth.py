@@ -24,7 +24,7 @@ def login():
                 flash('incorrect password', category='error')
         else:
             flash('User does not exist', category='error')
-    return render_template("login.html")
+    return render_template("login.html", user=current_user)
 
 @auth.route('/logout')
 @login_required
@@ -32,6 +32,10 @@ def logout():
     logout_user()
     return redirect(url_for('auth.login'))
 
+@auth.route('/edit-mode')
+@login_required
+def edit_mode():
+    return render_template("edit-mode.html", user=current_user)
 
 @auth.route('/sign-up', methods=['GET','POST'])
 def sign_up():
@@ -68,4 +72,4 @@ def sign_up():
             return redirect(url_for('views.home'))
 
             #add to db
-    return render_template("sign-up.html")
+    return render_template("sign-up.html", user=current_user)

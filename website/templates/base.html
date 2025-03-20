@@ -18,6 +18,11 @@
 
     <title>{% block title %}Home{% endblock %}</title>
     <style>
+      
+      .navbar{
+        z-index: 1000;
+        position: absolute;
+      }
       #logout{
         position: absolute;
         left: 93%;
@@ -37,11 +42,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbar">
           <div class="navbar-nav">
-
+            {% if user.is_authenticated %}
             <a class="nav-item nav-link" id="home" href="/">Home</a>
+            <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+            {% else %}
             <a class="nav-item nav-link" id="login" href="/login">Login</a>
             <a class="nav-item nav-link" id="sign-Up" href="/sign-up">Sign Up</a>
-            <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+            {% endif %}
 
           </div>
         </div>

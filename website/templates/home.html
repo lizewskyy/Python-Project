@@ -20,21 +20,23 @@
                 background-image: url("{{ url_for('static', filename='R.jpeg') }}");
                 background-size: 100dvh;
             }
-            .navbar{   
-            
+        
+        .navbar {
             width: 100%;
-            height: 60px;
+            min-height: 15%;
+            max-height: 400px;
             position: absolute;
-            top: 5%;
+            top: 0;
             left: 0;
             right: 0;
-            transform: translate(0%, -50%);
             margin: auto;
             background-color: #000000 !important;
         }
-        .navbar a{
+
+        .navbar a {
             margin-right: 20px;
         }
+        
         .jumbotron{
             position: relative;
             background-image: url('/website/static/sistemas-de-ti.png');
@@ -73,32 +75,63 @@
             align-items: center;
         }
         @media (max-width: 768px) {
+            
             .jumbotron {
+                position: absolute;
+                top: 200px;
+                left: 25px;
+                margin-right: 5%;
+                z-index: 1;
                 line-height: 20px;
-                margin-bottom: 150px;
+
             }
         }
         @media (max-width: 768px) {
+            #logout{
+            position: absolute;
+            left: 83%;
+            }
+            .navbar{
+            z-index: 1000;
+            position: absolute;
+            }
+            footer{
+                position: relative;
+                top: 600px;
+            }
             .row {
+                position:relative;
+                top: 600px;
                 flex-direction: column;
                 height: auto;
                 padding-top: 20px;
             }
             .row > div {
+                margin: 15% 0% 0% 5%;
                 margin-bottom: 20px;
             }
+            .container {
+                width: 90%;
+                margin: 15% 0% 0% 5%;
+            }
+            .container h2 {
+                font-size: 20px;
+            }
+            
         }
-
+            
+      
         </style>
 
     </head>
     
     <body>
+        
         <div class="container">
             <div class="jumbotron text-center my-5">
                 <h1>Bem vindo ao Kriator</h1>
                 <p class="lead">Fácil e prático de utilizar e implementar no dia a dia.</p>
-                <a href="" class="btn btn-primary btn-lg" type="button">Baixe Agora</a>
+                <a href="edit-mode" class="btn btn-primary btn-lg" type="button">Use Agora</a>
                 
                 <a href="#features" class="btn btn-primary btn-lg" type="button">Saiba Mais</a>
             </div>
